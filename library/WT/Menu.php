@@ -24,31 +24,31 @@
  */
 class WT_Menu {
 	/** @var string The text to be displayed in the mneu */
-	var $label = ' ';
+	private $label;
 
 	/** @var string The target URL or href*/
-	var $link = '#';
+	private $link;
 
 	/** @var string The CSS ID to be used for this menu item */
-	var $id = null;
+	private $id;
 
 	/** @var string An onclick action, typically used with a link of "#" */
-	var $onclick = null;
+	private $onclick;
 
 	/** @var WT_Menu[] */
-	var $submenus;
+	private $submenus;
 
 	/** @var string Used internally to create javascript menus */
-	var $parentmenu = null;
+	private $parentmenu;
 
 	/** @var string Used to format javascript menus */
-	var $submenuclass = '';
+	private $submenuclass;
 
 	/** @var string Used to format javascript menus */
-	var $iconclass = '';
+	private $iconclass;
 
 	/** @var string Used to format javascript menus */
-	var $class = '';
+	private $class;
 
 	/**
 	 * Constructor for the menu class

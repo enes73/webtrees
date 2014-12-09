@@ -1,7 +1,6 @@
 .normal_inner_block {
 	width: 100%;
 }
-
 a.showit:hover > span {
 	filter: alpha(opacity=85);
 }

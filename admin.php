@@ -664,5 +664,7 @@ function old_paths() {
 		WT_ROOT.'themes/xenea/jquery-ui-1.10.3',
 		WT_ROOT.'themes/_administration/css-1.6.0',
 		WT_ROOT.'themes/_administration/jquery-ui-1.10.3',
+		// Removed in 1.7.0
+		WT_ROOT.'library/WT/MenuBar.php',
 	);
 }

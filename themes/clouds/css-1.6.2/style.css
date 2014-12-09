@@ -33,12 +33,6 @@ body {
 	font: 12px tahoma, arial, helvetica, sans-serif;
 }
 
-#clouds-container {
-	background-color: #fff;
-	border: 1px solid #039;
-	margin: 10px;
-}
-
 #content {
 	padding: 10px;
 }
@@ -52,75 +46,79 @@ td {
 }
 
 /* ================= Header Layout */
-#header {
-	background-image: url(images/clouds.png);
-	height: 30px;
+header {
+	background: #acf url(images/clouds.png) repeat-x;
+	border: 1px solid #039;
+	margin: 10px;
+	height: 65px;
+	position: relative; /* So we can position the children */
 }
 
 /* Set stack level for top menu row */
 .makeMenu ul,
-#main-menu ul {
+.header-menu ul,
+.main-menu ul {
 	z-index: 210;
 }
 
-.title {
-	color: #039;
-	float: left;
+.header-title {
 	font-size: 20px;
-	margin-left: 12px;
-	margin-top: 5px;
-	vertical-align: middle;
-	width: 70%;
+	font-weight: normal;
+	position: absolute;
+	top: 5px;
+	left: 5px;
 }
 
-.hsearch {
-	display: block;
-	float: right;
-	padding-right: 10px;
-	padding-top: 5px;
+[dir=rtl] .header-title {
+	left: inherit;
+	right: 5px;
 }
 
-#menu-right {
-	float: right;
-	margin-right: 20px;
+.header-search {
+	position: absolute;
+	right: 5px;
+	top: 5px;
 }
 
-[dir=rtl] .title {
-	float: right;
-	margin-right: 12px;
+[dir=rtl] .header-search {
+	position: absolute;
+	left: inherit;
+	right: 5px;
 }
 
-[dir=rtl] .hsearch {
-	float: left;
-	padding-left: 10px;
+.header-menu {
+	position: absolute;
+	max-width: 50%;
+	right: 5px;
+	bottom: 5px;
 }
 
-[dir=rtl] #menu-right {
-	float: left;
-	margin-left: 20px;
+[dir=rtl] .header-menu {
+	left: inherit;
+	right: 5px;
 }
 
-#bodydiv .title {
-	margin: 0;
+.main-menu {
+	position: absolute;
+	max-width: 50%;
+	left: 5px;
+	bottom: 5px;
+}
+
+[dir=rtl] .main-menu {
+	left: 5px;
+	right: inherit;
 }
 
 /* ===== */
 /* Layout Left Main menu */
 
-/* set up div container */
-#topMenu {
-	background: #acf;
-	clear: both;
-	height: 31px;
-	width: 100%;
-}
-
-#topMenu ul {
+header nav ul {
 	margin: 0;
 	padding: 0;
 }
 
-#main-menu ul {
+.main-menu ul {
 	padding: 0;
 	margin: 0;
 	border: 1px solid #ddd;
@@ -132,7 +130,7 @@ td {
 	background: #fff;
 }
 
-#main-menu li {
+.main-menu li {
 	display: block;
 	position: relative;
 	float: left;
@@ -140,11 +138,11 @@ td {
 	width: 100%;
 }
 
-#main-menu li a {
+.main-menu li a {
 	display: block;
 }
 
-#main-menu li > ul {
+.main-menu li > ul {
 	display: block;
 	position: absolute;
 	top: 0;
@@ -153,37 +151,37 @@ td {
 	right: auto;
 }
 
-#main-menu > li > a {
+.main-menu > li > a {
 	height: 37px;
 	width: 27px;
 }
 
-#main-menu > li > ul {
+.main-menu > li > ul {
 	left: 0;
 	right: auto;
 	top: 22px;
 }
 
-#main-menu a {
+.main-menu a {
 	text-decoration: none;
 	padding: 0 10px;
 	margin: 0;
 	white-space: nowrap;
 }
 
-#main-menu ul li:hover a,
-#main-menu li:hover li a {
+.main-menu ul li:hover a,
+.main-menu li:hover li a {
 	background: none;
 	border: 0;
 }
 
-#main-menu li:hover > ul {
+.main-menu li:hover > ul {
 	visibility: visible;
 	opacity: 1;
 }
 
 /* First row submenu style*/
-#main-menu > li > ul > li:first-child {
+.main-menu > li > ul > li:first-child {
 	text-indent: 0;
 	min-width: 100px;
 	width: 100%;
@@ -198,7 +196,7 @@ td {
 }
 
 /* Mainmenu Icons*/
-#main-menu > li {
+.main-menu > li {
 	background-image: url(images/sprites-top-menu.png);
 	background-repeat: no-repeat;
 	width: 22px;
@@ -208,7 +206,7 @@ td {
 }
 
 /* Submenu Icons */
-#main-menu li ul li {
+.main-menu li ul li {
 	background-image: url(images/sprites-sub-menu.png);
 	background-repeat: no-repeat;
 	height: 22px;
@@ -217,33 +215,33 @@ td {
 	text-indent: 22px;
 }
 
-[dir=rtl] #main-menu > li {
+[dir=rtl] .main-menu > li {
 	margin: 4px 16px 0 0;
 }
 
-[dir=rtl] #main-menu li {
+[dir=rtl] .main-menu li {
 	float: right;
 }
 
-[dir=rtl] #main-menu li:hover > ul {
+[dir=rtl] .main-menu li:hover > ul {
 	right: 100%;
 	left: auto;
 }
 
-[dir=rtl] #main-menu > li:hover > ul {
+[dir=rtl] .main-menu > li:hover > ul {
 	left: auto;
 	right: 0;
 }
 
-[dir=rtl] #main-menu li li {
+[dir=rtl] .main-menu li li {
 	text-align: right;
 }
 
-[dir=rtl] #main-menu li li a {
+[dir=rtl] .main-menu li li a {
 	display: block;
 }
 
-[dir=rtl] #main-menu > li > ul > li:first-child {
+[dir=rtl] .main-menu > li > ul > li:first-child {
 	text-align: center;
 }
 
@@ -956,21 +954,23 @@ td {
 /* ===== */
 /* Right Options Menu */
 
-#menu-right {
-	float: right;
+.header-menu {
 	margin: 10px 10px 4px 0;
 }
 
+.header-menu li,
 .makeMenu li {
 	display: inline;
 	position: relative;
 	white-space: nowrap;
 }
 
+.header-menu li:before,
 .makeMenu li:before {
 	content: " | ";
 }
 
+.header-menu li ul,
 .makeMenu li ul {
 	background-color: #eee;
 	border: thin solid #aaa;
@@ -980,42 +980,50 @@ td {
 	top: 1.1em !important;
 }
 
+.header-menu li ul li,
 .makeMenu li ul li {
 	display: block;
 	text-align: left;
 }
 
+.header-menu li ul li a,
 .makeMenu li ul li a {
 	color: #333;
 	padding: 2px 5px 2px 2px !important;
 }
 
+.header-menu,
 .makeMenu,
+.header-menu li ul,
 .makeMenu li ul {
 	list-style: none;
 	margin-left: 0 !important;
 	padding: 1px;
-	top: 5px;
 }
 
+.header-menu li:hover > ul,
 .makeMenu li:hover > ul {
 	display: block;
 }
 
+.header-menu li a,
 .makeMenu li a {
 	color: #039;
 }
 
+.header-menu li a:hover,
 .makeMenu li a:hover {
 	color: #f5003d;
 }
 
+.header-menu ul li a,
 .makeMenu ul li a {
 	background-color: #fff;
 	display: block;
 	padding: 0 5px !important;
 }
 
+.header-menu ul li a:hover,
 .makeMenu ul li a:hover {
 	background: #c8e7ff;
 	color: #000;
@@ -1027,7 +1035,9 @@ li a.link {
 	margin-right: 5px;
 }
 
+.header-menu li ul li:before,
 .makeMenu li ul li:before,
+.header-menu li:first-child:before,
 .makeMenu li:first-child:before {
 	content: "";
 }
@@ -1038,11 +1048,13 @@ li a.link {
 	font-weight: 900;
 }
 
+[dir=rtl] .header-menu li ul,
 [dir=rtl] .makeMenu li ul {
 	left: auto;
 	right: -10px !important;
 }
 
+[dir=rtl] .header-menu li ul li,
 [dir=rtl] .makeMenu li ul li {
 	text-align: right;
 }
@@ -4282,10 +4294,8 @@ span.link_text {
 		right: -80px;
 	}
 
-	#topMenu,
-	#header select,
-	#header input,
-	#footer select,
+	header,
+	footer,
 	#backprint,
 	#sidebar,
 	form,

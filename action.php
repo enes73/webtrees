@@ -38,6 +38,7 @@
 
 use WT\Auth;
 use WT\Log;
+use WT\Theme;
 use WT\User;
 
 define('WT_SCRIPT_NAME', 'action.php');
@@ -243,8 +244,8 @@ case 'reject-changes':
 case 'theme':
 	// Change the current theme
 	$theme = WT_Filter::post('theme');
-	if (WT_Site::getPreference('ALLOW_USER_THEMES') && in_array($theme, get_theme_names())) {
-		$WT_SESSION->theme_id = $theme;
+	if (WT_Site::getPreference('ALLOW_USER_THEMES') && array_key_exists($theme, Theme::themeNames())) {
+		$WT_SESSION->theme = $theme;
 		// Remember our selection
 		Auth::user()->setPreference('theme', $theme);
 	} else {

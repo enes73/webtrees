@@ -47,6 +47,7 @@ body {
 input,
 textarea,
 fieldset,
+header,
 .border1,
 .block,
 .descriptionbox,
@@ -169,7 +170,7 @@ textarea:required:invalid {
 }
 
 /* Elements used on every page */
-#header {
+header {
 	color: #888;
 	text-align: center;
 }
@@ -211,7 +212,8 @@ textarea:required:invalid {
 }
 
 /* Block level objects, such as header, footer, etc. */
-.block {
+.block,
+header {
 	background-color: #eee;
 	clear: none;
 }
@@ -260,13 +262,12 @@ textarea:required:invalid {
 }
 
 /* Set stack level for top two header menu rows */
-.makeMenu ul,
-#main-menu ul {
+header ul {
 	z-index: 210;
-
 }
 
 /* Use CSS menus based on nested <ul> */
+header ul li,
 .makeMenu li {
 	background: none !important;
 	display: inline;
@@ -274,18 +275,22 @@ textarea:required:invalid {
 	white-space: nowrap;
 }
 
+header ul li:before,
 .makeMenu li:before {
 	content: " | ";
 }
 
+header ul li ul li:before,
 .makeMenu li ul li:before {
 	content: "";
 }
 
+header ul li:first-child:before,
 .makeMenu li:first-child:before {
 	content: "";
 }
 
+header ul li ul,
 .makeMenu li ul {
 	display: none;
 	position: absolute;
@@ -295,49 +300,45 @@ textarea:required:invalid {
 	border: thin solid #aaa;
 }
 
+[dir=rtl] header ul li ul,
 [dir=rtl] .makeMenu li ul {
 	left: auto;
 	right: 0;
 }
 
-/* position sub-sub-menus */
-.makeMenu ul ul {
-	top: 0;
-	left: 100px;
-}
-
-[dir=rtl] .makeMenu ul ul {
-	top: 0;
-	left: auto;
-	right: 100px;
-}
-
+header ul li ul li,
 .makeMenu li ul li {
 	display: block;
 	text-align: left;
 }
 
+[dir=rtl] header ul li ul li,
 [dir=rtl] .makeMenu li ul li {
 	text-align: right;
 }
 
+header ul,
 .makeMenu,
+header ul li ul,
 .makeMenu li ul {
 	list-style: none;
 	margin: 0;
 	padding: 1px;
 }
 
+header ul li:hover > ul,
 .makeMenu li:hover > ul {
 	display: block;
 }
 
+header ul ul li a,
 .makeMenu ul li a {
 	background-color: #eee;
 	padding: 2px 5px;
 	display: block;
 }
 
+header ul ul li a:hover,
 .makeMenu ul li a:hover {
 	background-color: #369;
 	color: #fff;
@@ -623,7 +624,7 @@ div.fact_SHARED_NOTE {
 		display: none !important;
 	}
 
-	#header,
+	header,
 	#footer,
 	#pedigree-page #people,
 	#CB_ALL, label,
@@ -634,7 +635,6 @@ div.fact_SHARED_NOTE {
 	#familybook_chart h3 {
 		margin-bottom: 10px;
 	}
-
 	form, button, input {
 		display: none;
 	}
